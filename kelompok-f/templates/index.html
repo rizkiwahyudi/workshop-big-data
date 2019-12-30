@@ -1,5 +1,16 @@
 {% extends 'layout.html'%}
 
 {% block content %}
-  <h1>Hore</h1>
+<div class="row col-4 offset-4" style="margin-top: 30vh">
+  <form action="/search" method="get" style="width: 100%; text-align: center">
+    <input
+      type="text"
+      class="form-control"
+      name="q"
+      placeholder="Kata kunci"
+    />
+
+    <button type="submit" class="btn btn-primary mt-3">Cari</button>
+  </form>
+</div>
 {% endblock %}

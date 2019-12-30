@@ -3,5 +3,33 @@
 {% block content %}
 <div class="row col-4 offset-4" style="margin-top: 30vh">
   <h1>Kamu Cari {{ keyword }}, kan?</h1>
+  <canvas id="myChart"></canvas>
 </div>
+{% endblock %}
+
+{% block js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+<script>
+  const ctx = document.getElementById('myChart').getContext('2d');
+  const data = {
+    datasets: [{
+      backgroundColor: ['red', 'yellow', 'green'],
+      data: [30, 10, 20]
+    }],
+    labels: [
+      'Negatif',
+      'Netral',
+      'Positif'
+    ]
+  };
+
+  const options = {};
+
+  const pie = new Chart(ctx, {
+    type: 'pie',
+    data: { ...data },
+    options: { ...options }
+  });
+</script>
 {% endblock %}
